@@ -1,6 +1,10 @@
 # EZNaiveBayes
 
-This project intends to be a universal, full-featured, easy-to-use NaiveBayes classifier for text classification.
+Python NaiveBayes classifier for text classification.
+This project intends to be working flawlessly on every labelled text dataset, it is full-featured and easy to use.
+
+This classifier was originally developped to perform sentiment analysis on a dataset from Twitter with binary labels (positive/negative). 
+It has been adapted to manage automatically as many labels as there are.
 
 It takes as an input any CSV file of labelled text data.
 It outputs exportable JSON NaiveBayes classifiers, and an Excel file containing all the testing results to compare and chose the  best classifier.
