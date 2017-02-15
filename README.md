@@ -18,3 +18,24 @@ It takes in charge:
 - Generation of exportable JSON files
 - Application of the classifier to a test dataset
 - Formatted output of the test including many info to pick the dataset you need
+- Production file callable from external scripts to classify items based on the trained classifiers
+
+Once you have your CSV dataset, it takes only 5 steps from download to production, by  from only 2 files
+
+1. Installation
+Download the library
+Install all the required packages and libraries
+
+2. Setup
+Go to config.py and set all the variables to fit your needs and your dataset.
+
+3. Dataset preparation
+Inside NaiveBayes.py, uncomment the first phase, called "init_datasets"
+
+4. Training & Testing
+Run NaiveBayes.py, it will train and test all the samples you specified in config.py
+
+5. Production
+Place the sentiment_analysis.py in your folder, adapt the global variables to your needs and your scripts.
+
+Enjoy, please send me your feedbacks!
