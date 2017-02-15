@@ -20,7 +20,7 @@ It takes in charge:
 - Formatted output of the test including many info to pick the dataset you need
 - Production file callable from external scripts to classify items based on the trained classifiers
 
-Once you have your CSV dataset, it takes only 5 steps from download to production, by  from only 2 files
+Once you have your CSV dataset, it takes only 5 steps from download to production, with 1 configuration ifle and one file to run.
 
 1. Installation
 Download the library
