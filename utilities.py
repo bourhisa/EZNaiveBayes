@@ -7,11 +7,11 @@ from config import *
 def print_loading(label, proportion, remaining, end):  # Prints a loading bar
     to_be_printed = "\r" + label
     nb_symbols = int(round((proportion*40),0))
-    to_be_printed += "[{}{}] {:.2%}, {} remaining".format("#" * nb_symbols, " "* (int(40)-nb_symbols), proportion, remaining)
+    to_be_printed += " [{}{}] {:.2%}, {} remaining".format("#" * nb_symbols, " "* (int(40)-nb_symbols), proportion, remaining)
     sys.stdout.write(to_be_printed)
     sys.stdout.flush()
     if proportion == 1:
-        print "\r" + end
+        print "\r " + end
 
 
 def print_output(msg):  # Prints console outputs

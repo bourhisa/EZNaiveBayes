@@ -62,6 +62,8 @@ class TestingClassifier():
             if f:
                 try:
                     self.features = { k.encode('utf-8') : v for k, v in json.loads(p).items()}
+                    print self.features
+                    global LABELS
                     LABELS = [l.encode('utf-8') for l in self.features['labels']]
                 except:
                     self.features = dict()
@@ -102,11 +104,11 @@ class TestingClassifier():
                 except Exception as e:
                     exc_type, exc_obj, exc_tb = sys.exc_info()
                     fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-                    # print(exc_type, fname, exc_tb.tb_lineno), item
+                    print(exc_type, fname, exc_tb.tb_lineno), item
                     undetermined_results.append(1)
 
                 nb_tokens += len(t.tokens)
-
+				
                 if i % 1000 == 0 or i == len(self.dataset.items):
                     elapsed_queue = round(time.time()- start_queue, 2)
                     elapsed_test =  round(time.time()- time_start, 2)
@@ -132,12 +134,10 @@ class TestingClassifier():
 
 # Called by make_test(), makes the prediction about the label and the confidence ratio for one item
     def label_prevision_for_item(self, tokens, certainty_rate):
-
         try:
             case_labels = {label : self.features['probs'][label] for label in LABELS}
             case_nulls = {label : 1000000*(1/ float((self.features['tokens'][label] + self.features['tokens']['total']))) for label in LABELS}
             tokens_dict = {} # Local dict to store the item's tokens
-
             for t in tokens:
                 try: #If tokens exist in global_dict
                     tokens_dict[t] = self.global_dict[t]
@@ -159,6 +159,7 @@ class TestingClassifier():
 
             results = {'label': label,'ratio': ratio}
             return results
+	
         except Exception as e:
             print e
 

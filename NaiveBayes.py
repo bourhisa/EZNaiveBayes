@@ -25,11 +25,6 @@ from testing_classifier import TestingClassifier
 from item import Item
 from dataset import Dataset
 
-# TODO control length of required datasamples
-# TODO control of labels
-# TODO filter neutral tokens
-# TODO enhance the loaing bars
-
 def init_datasets(csv, training, testing):  # First procedural function. Imports from the CSV, and sets up the datasets
     init_files()
     x = Dataset()
@@ -78,7 +73,7 @@ if __name__ == '__main__':
 
     init_files()
 
-    # init_datasets(ORIGINAL_CSV, FILE_TRAINING, FILE_TESTING)
+    #init_datasets(ORIGINAL_CSV, FILE_TRAINING, FILE_TESTING)
 
     for sizes in TO_BE_TRAINED:
         train(sizes)
